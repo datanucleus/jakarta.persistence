@@ -31,7 +31,9 @@ package jakarta.persistence;
  */
 public class NonUniqueResultException extends PersistenceException {
 
-        /** 
+	private static final long serialVersionUID = -4762263326851035194L;
+
+		/** 
          * Constructs a new <code>NonUniqueResultException</code> exception 
          * with <code>null</code> as its detail message.
          */

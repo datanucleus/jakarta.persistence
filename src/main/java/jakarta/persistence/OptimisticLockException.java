@@ -31,6 +31,8 @@ package jakarta.persistence;
  */
 public class OptimisticLockException extends PersistenceException {
 
+	private static final long serialVersionUID = -2422002473824787151L;
+
 	/**
 	 * The object that caused the exception
 	 */

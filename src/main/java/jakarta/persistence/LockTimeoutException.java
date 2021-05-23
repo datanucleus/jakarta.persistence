@@ -26,7 +26,10 @@ package jakarta.persistence;
  * @since 2.0
  */
 public class LockTimeoutException extends PersistenceException {
-    /** The object that caused the exception */
+
+	private static final long serialVersionUID = -8690968766251886649L;
+
+	/** The object that caused the exception */
     Object entity;
 
     /** 

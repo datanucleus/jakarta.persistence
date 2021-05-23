@@ -30,10 +30,12 @@ package jakarta.persistence;
  */
 public class PersistenceException extends RuntimeException {
 
-        /** 
-         * Constructs a new <code>PersistenceException</code> exception 
-         * with <code>null</code> as its detail message.
-         */
+	private static final long serialVersionUID = -3386808994095496011L;
+
+    /** 
+     * Constructs a new <code>PersistenceException</code> exception 
+     * with <code>null</code> as its detail message.
+     */
 	public PersistenceException() {
 		super();
 	}

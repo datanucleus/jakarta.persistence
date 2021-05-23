@@ -40,6 +40,8 @@ package jakarta.persistence;
  */
 public class EntityNotFoundException extends PersistenceException {
 
+	private static final long serialVersionUID = -5848243143608545604L;
+
 	/**
 	 * Constructs a new <code>EntityNotFoundException</code> exception with
 	 * <code>null</code> as its detail message.

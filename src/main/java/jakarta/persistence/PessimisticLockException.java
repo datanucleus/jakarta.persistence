@@ -25,7 +25,10 @@ package jakarta.persistence;
  * @since 2.0
  */
 public class PessimisticLockException extends PersistenceException {
-    /** The object that caused the exception */
+
+	private static final long serialVersionUID = 5109344438621630753L;
+
+	/** The object that caused the exception */
     Object entity;
 
     /** 

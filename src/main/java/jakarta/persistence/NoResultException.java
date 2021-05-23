@@ -31,6 +31,8 @@ package jakarta.persistence;
  */
 public class NoResultException extends PersistenceException {
 
+	private static final long serialVersionUID = -4692005521261920621L;
+
 	/**
 	 * Constructs a new <code>NoResultException</code> exception with
 	 * <code>null</code> as its detail message.

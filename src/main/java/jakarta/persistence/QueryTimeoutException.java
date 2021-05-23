@@ -26,7 +26,9 @@ package jakarta.persistence;
  */
 public class QueryTimeoutException extends PersistenceException {
 
-    /** The query object that caused the exception */
+	private static final long serialVersionUID = -4743200115683672792L;
+
+	/** The query object that caused the exception */
     Query query;
 
     /** 

@@ -34,7 +34,9 @@ package jakarta.persistence;
  */
 public class EntityExistsException extends PersistenceException {
 
-    /**
+	private static final long serialVersionUID = -8522524497347035683L;
+
+	/**
      * Constructs a new <code>EntityExistsException</code> exception with
      * <code>null</code> as its detail message.
      */

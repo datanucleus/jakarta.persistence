@@ -65,7 +65,7 @@ public interface EntityGraph<T> {
      * @throws IllegalStateException if the EntityGraph has been 
      *         statically defined
      */
-    public void addAttributeNodes(Attribute<T, ?>... attribute);
+    public void addAttributeNodes(Attribute<? super T, ?>... attribute);
 
     /**
      * Add a node to the graph that corresponds to a managed
@@ -79,7 +79,7 @@ public interface EntityGraph<T> {
      * @throws IllegalStateException if the EntityGraph has been 
      *         statically defined
      */
-    public <X> Subgraph<X> addSubgraph(Attribute<T, X> attribute);
+    public <X> Subgraph<X> addSubgraph(Attribute<? super T, X> attribute);
 
     /**
      * Add a node to the graph that corresponds to a managed
@@ -96,7 +96,7 @@ public interface EntityGraph<T> {
      * @throws IllegalStateException if the EntityGraph has been 
      *         statically defined
      */
-    public <X> Subgraph<? extends X> addSubgraph(Attribute<T, X> attribute, Class<? extends X> type);
+    public <X> Subgraph<? extends X> addSubgraph(Attribute<? super T, X> attribute, Class<? extends X> type);
 
     /**
      * Add a node to the graph that corresponds to a managed
@@ -145,7 +145,7 @@ public interface EntityGraph<T> {
      * @throws IllegalStateException if this EntityGraph has been 
      *         statically defined
      */
-    public <X> Subgraph<X> addKeySubgraph(Attribute<T, X> attribute);
+    public <X> Subgraph<X> addKeySubgraph(Attribute<? super T, X> attribute);
 
     /**
      * Add a node to the graph that corresponds to a map key
@@ -162,7 +162,7 @@ public interface EntityGraph<T> {
      * @throws IllegalStateException if this EntityGraph has been 
      *         statically defined
      */
-    public <X> Subgraph<? extends X> addKeySubgraph(Attribute<T, X> attribute, Class<? extends X> type);
+    public <X> Subgraph<? extends X> addKeySubgraph(Attribute<? super T, X> attribute, Class<? extends X> type);
 
     /**
      * Add a node to the graph that corresponds to a map key
@@ -181,11 +181,9 @@ public interface EntityGraph<T> {
     public <X> Subgraph<X> addKeySubgraph(String attributeName);
 
     /**
-     * Add a node to the graph that corresponds to a map key
-     * that is a managed type with inheritance. This allows for
-     * construction of multi-node entity graphs that include related
-     * managed types. Subclass subgraphs will automatically include
-     * the specified attributes of superclass subgraphs
+     * Add a node to the graph that corresponds to a map key that is a managed type with inheritance. 
+     * This allows for construction of multi-node entity graphs that include related managed types. 
+     * Subclass subgraphs will automatically include the specified attributes of superclass subgraphs
      *
      * @param attributeName  name of the attribute
      * @param type  entity subclass
@@ -201,10 +199,8 @@ public interface EntityGraph<T> {
 
 
     /**
-     * Add additional attributes to this entity graph that
-     * correspond to attributes of subclasses of this EntityGraph's
-     * entity type.  Subclass subgraphs will automatically include the
-     * specified attributes of superclass subgraphs.
+     * Add additional attributes to this entity graph that correspond to attributes of subclasses of this EntityGraph's entity type.
+     * Subclass subgraphs will automatically include the specified attributes of superclass subgraphs.
      *
      * @param type  entity subclass
      * @return subgraph for the subclass
@@ -212,14 +208,12 @@ public interface EntityGraph<T> {
      * @throws IllegalStateException if the EntityGraph has been 
      *         statically defined
      */
-    public <T> Subgraph<? extends T> addSubclassSubgraph(Class<? extends T> type);
+    public <X> Subgraph<? extends X> addSubclassSubgraph(Class<? extends X> type);
 
 
     /**
-     * Return the attribute nodes of this entity that are included in
-     * the entity graph.
-     * @return attribute nodes for the annotated entity type or empty
-     *         list if none have been defined
+     * Return the attribute nodes of this entity that are included in the entity graph.
+     * @return attribute nodes for the annotated entity type or empty list if none have been defined
      */
     public List<AttributeNode<?>> getAttributeNodes();
 

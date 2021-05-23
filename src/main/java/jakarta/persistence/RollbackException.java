@@ -24,30 +24,30 @@ package jakarta.persistence;
  * @since 1.0
  */
 public class RollbackException extends PersistenceException {
-	
-        /** 
-         * Constructs a new <code>RollbackException</code> exception 
-         * with <code>null</code> as its detail message.
-         */
+
+	private static final long serialVersionUID = -6903281538930635254L;
+
+    /** 
+     * Constructs a new <code>RollbackException</code> exception with <code>null</code> as its detail message.
+     */
 	public RollbackException() {
 		super();
 	}
 
-        /** 
-         * Constructs a new <code>RollbackException</code> exception 
-         * with the specified detail message.
-         * @param   message   the detail message.
-         */
+    /** 
+     * Constructs a new <code>RollbackException</code> exception 
+     * with the specified detail message.
+     * @param   message   the detail message.
+     */
 	public RollbackException(String message) {
 		super(message);
 	}
 
-        /** 
-         * Constructs a new <code>RollbackException</code> exception 
-         * with the specified detail message and cause.
-         * @param   message   the detail message.
-         * @param   cause     the cause.
-         */
+    /** 
+     * Constructs a new <code>RollbackException</code> exception with the specified detail message and cause.
+     * @param   message   the detail message.
+     * @param   cause     the cause.
+     */
 	public RollbackException(String message, Throwable cause) {
 		super(message, cause);
 	}
