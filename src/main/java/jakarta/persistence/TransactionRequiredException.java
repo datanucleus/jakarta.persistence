@@ -23,22 +23,44 @@ package jakarta.persistence;
  * 
  * @since 1.0
  */
-public class TransactionRequiredException extends PersistenceException {
+public class TransactionRequiredException extends PersistenceException
+{
 
-	private static final long serialVersionUID = -634239516435589139L;
+    private static final long serialVersionUID = -634239516435589139L;
 
-	/**
-	 * Constructs a new <code>TransactionRequiredException</code> exception with <code>null</code> as its detail message.
-	 */
-	public TransactionRequiredException() {
-		super();
-	}
+    /**
+     * Constructs a new <code>TransactionRequiredException</code> exception with <code>null</code> as its detail message.
+     */
+    public TransactionRequiredException()
+    {
+        super();
+    }
 
-	/**
-	 * Constructs a new <code>TransactionRequiredException</code> exception with the specified detail message.
-	 * @param message the detail message.
-	 */
-	public TransactionRequiredException(String message) {
-		super(message);
-	}
+    /**
+     * Constructs a new <code>TransactionRequiredException</code> exception with <code>null</code> as its detail message.
+     * @param cause Cause of this exception
+     */
+    public TransactionRequiredException(Exception cause)
+    {
+        super(cause);
+    }
+
+    /**
+     * Constructs a new <code>TransactionRequiredException</code> exception with the specified detail message.
+     * @param message the detail message.
+     */
+    public TransactionRequiredException(String message)
+    {
+        super(message);
+    }
+
+    /**
+     * Constructs a new <code>TransactionRequiredException</code> exception with the specified detail message.
+     * @param message the detail message.
+     * @param cause Cause of this exception
+     */
+    public TransactionRequiredException(String message, Exception cause)
+    {
+        super(message, cause);
+    }
 }
