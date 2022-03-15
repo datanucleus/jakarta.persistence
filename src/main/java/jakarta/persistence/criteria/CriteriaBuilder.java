@@ -581,21 +581,40 @@ public interface CriteriaBuilder {
     //numerical operations:
 	
     /**
-     * Create an expression that returns the arithmetic negation
-     * of its argument.
+     * Create an expression that returns the arithmetic negation of its argument.
      * @param x expression
      * @return arithmetic negation
      */
     <N extends Number> Expression<N> neg(Expression<N> x);
 
     /**
-     * Create an expression that returns the absolute value
-     * of its argument.
+     * Create an expression that returns the sign of its argument.
+     * @param x expression
+     * @return sign (1 if positive, 0 if zero, and -1 if negative)
+     */
+    Expression<Integer> sign(Expression<? extends Number> x);
+
+    /**
+     * Create an expression that returns the absolute value of its argument.
      * @param x expression
      * @return absolute value
      */
     <N extends Number> Expression<N> abs(Expression<N> x);
-	
+
+    /**
+     * Create an expression that returns the ceiling of its argument.
+     * @param x expression
+     * @return ceiling
+     */
+    <N extends Number> Expression<N> ceiling(Expression<N> x);
+
+    /**
+     * Create an expression that returns the floor of its argument.
+     * @param x expression
+     * @return floor
+     */
+    <N extends Number> Expression<N> floor(Expression<N> x);
+
     /**
      * Create an expression that returns the sum
      * of its arguments.
@@ -723,8 +742,7 @@ public interface CriteriaBuilder {
     Expression<Integer> mod(Expression<Integer> x, Integer y);
 
     /**
-     * Create an expression that returns the modulus
-     * of its arguments.
+     * Create an expression that returns the modulus of its arguments.
      * @param x value
      * @param y expression
      * @return modulus
@@ -732,13 +750,49 @@ public interface CriteriaBuilder {
     Expression<Integer> mod(Integer x, Expression<Integer> y);
 
     /**
-     * Create an expression that returns the square root
-     * of its argument.
+     * Create an expression that returns the square root of its argument.
      * @param x expression
      * @return square root
      */	
     Expression<Double> sqrt(Expression<? extends Number> x);
 
+    /**
+     * Create an expression that returns the exponential of its argument. 
+     * @param x expression
+     * @return exponential
+     */
+    Expression<Double> exp(Expression<? extends Number> x);
+
+    /**
+     * Create an expression that returns the natural logarithm of its argument.
+     * @param x expression
+     * @return natural logarithm
+     */
+    Expression<Double> ln(Expression<? extends Number> x);
+
+    /**
+     * Create an expression that returns the first argument raised to the power of its second argument.
+     * @param x base
+     * @param y exponent
+     * @return the base raised to the power of the exponent
+     */
+    Expression<Double> power(Expression<? extends Number> x, Expression<? extends Number> y);
+
+    /**
+     * Create an expression that returns the first argument raised to the power of its second argument.
+     * @param x base
+     * @param y exponent
+     * @return the base raised to the power of the exponent
+     */
+    Expression<Double> power(Expression<? extends Number> x, Number y);
+
+    /**
+     * Create an expression that returns the first argument rounded to the number of decimal places given by the second argument.
+     * @param x base
+     * @param n number of decimal places
+     * @return the rounded value
+     */
+    <T extends Number> Expression<T> round(Expression<T> x, Integer n);
 	
     //typecasts:
     
@@ -1625,23 +1679,13 @@ public interface CriteriaBuilder {
      */
     Expression<Integer> second(Expression<? extends java.util.Date> x);
 
-    /**
-     * Method to round a numeric expression.
-     * <b>Note that this is a DataNucleus extension, post JPA2.2</b>
-     * @param expr The numeric expression
-     * @param digits The digits to round to (0 = integer)
-     * @return The rounded expression
-     */
-    Expression<Number> round(Expression<Number> expr, Integer digits);
-
+    // DN extensions
     Expression<Number> cos(Expression<Number> expr);
     Expression<Number> sin(Expression<Number> expr);
     Expression<Number> tan(Expression<Number> expr);
     Expression<Number> acos(Expression<Number> expr);
     Expression<Number> asin(Expression<Number> expr);
     Expression<Number> atan(Expression<Number> expr);
-    Expression<Integer> ceil(Expression<Number> expr);
-    Expression<Integer> floor(Expression<Number> expr);
 }
 
 
