@@ -11,10 +11,13 @@
  */
 package jakarta.persistence.spi;
 
+import jakarta.persistence.PersistenceException;
+
 /**
+ * Exception thrown if a problem occurs during class transformation.
  * @since 3.1
  */
-public class TransformerException extends Exception
+public class TransformerException extends PersistenceException
 {
     private static final long serialVersionUID = -4623232114768380148L;
 
