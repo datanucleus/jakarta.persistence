@@ -183,27 +183,19 @@ public interface PersistenceUnitInfo {
     public String getPersistenceXMLSchemaVersion();
 
     /**
-     * Returns ClassLoader that the provider may use to load any
-     * classes, resources, or open URLs.
-     * @return ClassLoader that the provider may use to load any 
-     * classes, resources, or open URLs 
+     * Returns ClassLoader that the provider may use to load any classes, resources, or open URLs.
+     * @return ClassLoader that the provider may use to load any classes, resources, or open URLs 
      */
     public ClassLoader getClassLoader();
 
     /**
-     * Add a transformer supplied by the provider that will be 
-     * called for every new class definition or class redefinition
-     * that gets loaded by the loader returned by the
-     * {@link PersistenceUnitInfo#getClassLoader} method. The transformer 
-     * has no effect on the result returned by the
-     * {@link PersistenceUnitInfo#getNewTempClassLoader} method.
-     * Classes are only transformed once within the same classloading
-     * scope, regardless of how many persistence units they may be 
-     * a part of.
-     * @param transformer   provider-supplied transformer that the
-     * container invokes at class-(re)definition time
+     * Add a transformer supplied by the provider that will be called for every new class definition or class redefinition that gets loaded by the loader 
+     * returned by the {@link PersistenceUnitInfo#getClassLoader} method. 
+     * The transformer has no effect on the result returned by the {@link PersistenceUnitInfo#getNewTempClassLoader} method.
+     * Classes are only transformed once within the same classloading scope, regardless of how many persistence units they may be a part of.
+     * @param transformer provider-supplied transformer that the container invokes at class-(re)definition time
      */
-    public void addTransformer(ClassTransformer transformer);
+    public void addTransformer(Transformer transformer);
 
     /**
      * Return a new instance of a ClassLoader that the provider may

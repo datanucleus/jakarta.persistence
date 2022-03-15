@@ -23,41 +23,32 @@ package jakarta.persistence;
  *
  * @since 1.0
  */
-public enum GenerationType { 
-
+public enum GenerationType
+{
     /**
-     * Indicates that the persistence provider must assign 
-     * primary keys for the entity using an underlying 
-     * database table to ensure uniqueness.
+     * Indicates that the persistence provider must assign primary keys for the entity using an underlying database table to ensure uniqueness.
      */
-    TABLE, 
+    TABLE,
 
     /**
-     * Indicates that the persistence provider must assign 
-     * primary keys for the entity using a database sequence.
+     * Indicates that the persistence provider must assign primary keys for the entity using a database sequence.
      */
-    SEQUENCE, 
+    SEQUENCE,
 
     /**
-     * Indicates that the persistence provider must assign 
-     * primary keys for the entity using a database identity column.
+     * Indicates that the persistence provider must assign primary keys for the entity using a database identity column.
      */
-    IDENTITY, 
+    IDENTITY,
 
     /**
-     * Indicates that the persistence provider should pick an 
-     * appropriate strategy for the particular database. The 
-     * <code>AUTO</code> generation strategy may expect a database 
-     * resource to exist, or it may attempt to create one. A vendor 
-     * may provide documentation on how to create such resources 
-     * in the event that it does not support schema generation 
-     * or cannot create the schema resource at runtime.
+     * Indicates that the persistence provider should pick an appropriate strategy for the particular database. 
+     * The <code>AUTO</code> generation strategy may expect a database resource to exist, or it may attempt to create one. 
+     * A vendor may provide documentation on how to create such resources in the event that it does not support schema generation or cannot create the schema resource at runtime.
      */
     AUTO,
 
     /**
-     * Use JRE java.util.UUID to generate a value.
-     * <b>Added by DataNucleus</b>.
+     * Indicates that the persistence provider must assign primary keys for the entity by generating an RFC 4122 Universally Unique IDentifier.
      */
     UUID
 }
