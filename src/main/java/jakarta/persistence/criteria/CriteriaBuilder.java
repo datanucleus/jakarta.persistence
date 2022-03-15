@@ -1199,58 +1199,52 @@ public interface CriteriaBuilder {
      * @return length expression
      */
     Expression<Integer> length(Expression<String> x);
-	
-	
+
     /**
-     * Create expression to locate the position of one string
-     * within another, returning position of first character
-     * if found.
-     * The first position in a string is denoted by 1.  If the
-     * string to be located is not found, 0 is returned.
-     * @param x  expression for string to be searched
-     * @param pattern  expression for string to be located
+     * Create expression to locate the position of one string within another, returning position of first character if found.
+     * The first position in a string is denoted by 1. If the string to be located is not found, 0 is returned.
+     * <p>
+     * <strong>Warning:</strong> the order of the parameters of this method is reversed compared to the corresponding function in JPQL.
+     * @param x expression for string to be searched
+     * @param pattern expression for string to be located
      * @return expression corresponding to position
      */
     Expression<Integer> locate(Expression<String> x, Expression<String> pattern);
-	
+
     /**
-     * Create expression to locate the position of one string
-     * within another, returning position of first character
-     * if found.
-     * The first position in a string is denoted by 1.  If the
-     * string to be located is not found, 0 is returned.
-     * @param x  expression for string to be searched
-     * @param pattern  string to be located
+     * Create expression to locate the position of one string within another, returning position of first character if found. 
+     * The first position in a string is denoted by 1. If the string to be located is not found, 0 is returned.
+     * <p>
+     * <strong>Warning:</strong> the order of the parameters of this method is reversed compared to the corresponding function in JPQL.
+     * @param x expression for string to be searched
+     * @param pattern string to be located
      * @return expression corresponding to position
      */
     Expression<Integer> locate(Expression<String> x, String pattern);
 
     /**
-     * Create expression to locate the position of one string
-     * within another, returning position of first character
-     * if found.
-     * The first position in a string is denoted by 1.  If the
-     * string to be located is not found, 0 is returned.
-     * @param x  expression for string to be searched
-     * @param pattern  expression for string to be located
-     * @param from  expression for position at which to start search
+     * Create expression to locate the position of one string within another, returning position of first character if found.
+     * The first position in a string is denoted by 1. If the string to be located is not found, 0 is returned.
+     * <p>
+     * <strong>Warning:</strong> the order of the parameters of this method is reversed compared to the corresponding function in JPQL.
+     * @param x expression for string to be searched
+     * @param pattern expression for string to be located
+     * @param from expression for position at which to start search
      * @return expression corresponding to position
      */
     Expression<Integer> locate(Expression<String> x, Expression<String> pattern, Expression<Integer> from);
 
     /**
-     * Create expression to locate the position of one string
-     * within another, returning position of first character
-     * if found.
-     * The first position in a string is denoted by 1.  If the
-     * string to be located is not found, 0 is returned.
-     * @param x  expression for string to be searched
-     * @param pattern  string to be located
-     * @param from  position at which to start search
+     * Create expression to locate the position of one string within another, returning position of first character if found. 
+     * The first position in a string is denoted by 1. If the string to be located is not found, 0 is returned.
+     * <p>
+     * <strong>Warning:</strong> the order of the parameters of this method is reversed compared to the corresponding function in JPQL.
+     * @param x expression for string to be searched
+     * @param pattern string to be located
+     * @param from position at which to start search
      * @return expression corresponding to position
-     */	
+     */
     Expression<Integer> locate(Expression<String> x, String pattern, int from);
-	
 
     // Date/time/timestamp functions:
 
