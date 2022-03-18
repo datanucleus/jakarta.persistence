@@ -17,7 +17,6 @@
 package jakarta.persistence.spi;
 
 import java.security.ProtectionDomain;
-import java.lang.instrument.IllegalClassFormatException;
 
 /**
  * A persistence provider supplies an instance of this interface to the {@link PersistenceUnitInfo#addTransformer PersistenceUnitInfo.addTransformer} method. 
@@ -40,5 +39,5 @@ public interface ClassTransformer extends Transformer
      * @throws IllegalClassFormatException if the input does not represent a well-formed class file
      */
     byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer)
-        throws IllegalClassFormatException;
+        throws TransformerException;
 }
