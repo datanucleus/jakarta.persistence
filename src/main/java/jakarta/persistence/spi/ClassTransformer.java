@@ -36,7 +36,7 @@ public interface ClassTransformer extends Transformer
      * @param protectionDomain the protection domain of the class being defined or redefined
      * @param classfileBuffer the input byte buffer in class file format - must not be modified
      * @return a well-formed class file buffer (the result of the transform), or null if no transform is performed
-     * @throws IllegalClassFormatException if the input does not represent a well-formed class file
+     * @throws TransformerException if the input does not represent a well-formed class file
      */
     byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer)
         throws TransformerException;
