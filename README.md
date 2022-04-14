@@ -7,7 +7,7 @@ Note that this DataNucleus Jakarta API jar has some bug fixes and improvements n
 
 ## KeyFacts
 
-__Javadocs__ : [3.0](http://www.datanucleus.org/javadocs/jakarta.persistence/3.0/)  
+__Javadocs__ : [3.1](http://www.datanucleus.org/javadocs/jakarta.persistence/3.1/), [3.0](http://www.datanucleus.org/javadocs/jakarta.persistence/3.0/)  
 __Download(Releases)__ : [Maven Central](http://central.maven.org/maven2/org/datanucleus/jakarta.persistence)  
 
 
