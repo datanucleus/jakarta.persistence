@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>jakarta.persistence</artifactId>
-    <version>3.1.0-SNAPSHOT</version>
+    <version>3.1.0</version>
 
     <name>Jakarta Persistence API</name>
     <description>The Jakarta Persistence API (JPA) : a standard interface-based Java model abstraction of persistence, continuing from the JPA API.</description>
