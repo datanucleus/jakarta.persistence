@@ -24,8 +24,7 @@ import java.security.ProtectionDomain;
  * The transformation occurs before the class is defined by the JVM.
  * @since 1.0
  */
-@Deprecated
-public interface ClassTransformer extends Transformer
+public interface ClassTransformer
 {
     /**
      * Invoked when a class is being loaded or redefined. 

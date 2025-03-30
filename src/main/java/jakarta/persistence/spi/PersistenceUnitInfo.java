@@ -195,7 +195,7 @@ public interface PersistenceUnitInfo {
      * Classes are only transformed once within the same classloading scope, regardless of how many persistence units they may be a part of.
      * @param transformer provider-supplied transformer that the container invokes at class-(re)definition time
      */
-    public void addTransformer(Transformer transformer);
+    public void addTransformer(ClassTransformer transformer);
 
     /**
      * Return a new instance of a ClassLoader that the provider may
